@@ -20,16 +20,24 @@ Now you can install mods, mods will be zipped and will either contain :code:`mod
 Installing DLL mods
 ~~~~~~~~~~~~~~~~~~~
 
-The dll file contained in the zip needs to be moved into :code:`~\Hollow Knight\hollow_knight_Data\Managed\Mods` 
+The dll file contained in the zip needs to be moved into :code:`~\Hollow Knight\hollow_knight_Data\Managed\Mods`.
+
+For most mods this will be enough, however some may have dependancies you will also need to install. 
+
+Usually mods will come with a readme file that will list dependancies if any that you will be required to also install.
 
 To uninstall the mod just remove it from this folder.
 
 Installing folder mods
 ~~~~~~~~~~~~~~~~~~~~~~
 
-Most mods will come in a folder named :code:`hollow_knight_Data` and this folder should just be moved to the :code:`~\Hollow Knight` folder to overwrite the vanilla one.
+Most mods will come in a folder named :code:`hollow_knight_Data` and this folder should just be moved to the :code:`~\Hollow Knight` folder to overwrite the vanilla one. 
 
-To uninstall these you can just find the dll file it installed in your :code:`~\Hollow Knight\hollow_knight_Data\Managed\Mods` folder and remove it from the folder, this will stop the API from loading the mod and consequentally any additional files it may have required to run.
+For most mods this will be enough, however some may have dependancies you will also need to install. 
+
+Usually mods will come with a readme file that will list dependancies if any that you will be required to also install.
+
+To uninstall these you can just find the dll file it installed in your :code:`~\Hollow Knight\hollow_knight_Data\Managed\Mods` folder and remove it from the folder.
 
 Installing via Crossroads
 ~~~~~~~~~~~~~~~~~~~~~~~~~
