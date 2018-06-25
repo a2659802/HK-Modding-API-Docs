@@ -6,7 +6,7 @@ Installing Mods
 
 Installing the API
 ~~~~~~~~~~~~~~~~~~
-Too install mods that use the modding API you first need to install the Modding API from the the google drive or build it yourself.
+To install mods that use the modding API you first need to install the Modding API from the the google drive or build it yourself.
 
 The Assembly-CSharp.dll should overwrite your vanilla one at :code:`~\Hollow Knight\hollow_knight_Data\Managed\Assembly-CSharp.dll`.
 
