@@ -12,7 +12,7 @@ Description
 A component which, when attached to a Hollow Knight enemy object, can make this enemy infinite, and increase in difficulty over time.
 
 Properties
-""""""""""
+^^^^^^^^^^
 
 .. list-table::
    :header-rows: 1
@@ -39,6 +39,9 @@ Properties
      - 2.0
      - Determines, using a weighted averaging system, the amount by which the enemy's speed should be modified. The default value of 2.0 will use the numbers provided in AnimationData and WaitData verbatim. 1.0 will use the original vanilla values. Details on this behavior are discussed below.
 
+
+Structures
+^^^^^^^^^^
 
 AnimationData
 """""""""""""
@@ -117,7 +120,7 @@ Example:
                };
 
 Public Methods
-""""""""""""""
+^^^^^^^^^^^^^^
 
 .. list-table::
    :header-rows: 1
@@ -142,8 +145,8 @@ Public Methods
      - This will modify the danceSpeed to a new value, which, in turn, will affect the speed at which every animation and wait should be run at. See below.
 
 
-danceSpeed and actual animation/wait speeds
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+danceSpeed Explained
+^^^^^^^^^^^^^^^^^^^^
 
 Consider this: You're making a nightmare version of the mega moss charger fight. So you take some of the charger's animations and waits and speed them up to make this fight more enjoyable and difficult. To you, these speeds are perfect, and the people who playtest your mod agree that all of the animations and waits are at the same difficulty level, that is not one moss charger attack feels too fast or slow in comparison to the others. But, they do complain about the difficulty as a whole, some find it too hard and others too easy. What if there was an easy way you could provide difficulty levels to your new god-fight?  Or maybe you want to have it get harder as the player does more damage to it. In either case, danceSpeed is your friend, and one of the core benefits of using CustomEnemySpeed.
 
