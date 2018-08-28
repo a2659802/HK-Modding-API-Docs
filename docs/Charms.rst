@@ -6,7 +6,7 @@ Checking if they are equipped can be checked with :code:`PlayerData.instance.equ
 The cost to equip charms can be changed with :code:`PlayerData.instance.charmCost_X`.
 
 
-+-----------------------------------+-------------------+-------------------------------+
++----+------------------------------+-------------------+-------------------------------+
 | ID | Name                         | LangName          | Add.Bool                      |
 +====+==============================+===================+===============================+
 | 01 | Gathering Swarm              | CHARM_NAME_1      | None                          |
