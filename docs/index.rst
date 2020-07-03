@@ -12,9 +12,9 @@ This is the documentation on Hollow Knights modding API.
    Charms
    Logging
    DnSpy
-   PlayerData
    Classes
-   Assets
+   PlayerData
    PlayMakerFSM
+   Assets
    CanvasUtil
    ModCommon

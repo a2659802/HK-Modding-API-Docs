@@ -57,4 +57,4 @@ Creating Mods
 .. note::
    If you downloaded a example mod, your mod will have an assembly name like ExampleMod, you will probably want to change this by right clicking on your project in the Solution Explorer and selecting Properties, Assembly name will be the top left most option on the screen that appears.
 
-.. _github: https://github.com/seanpr96/HollowKnight.Modding/tree/master/ExampleMods
+.. _github: https://github.com/fifty-six/HollowKnight.HellMod
