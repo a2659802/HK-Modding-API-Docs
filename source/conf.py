@@ -21,13 +21,13 @@
 # -- Project information -----------------------------------------------------
 
 project = u'Hollow Knight Modding Api'
-copyright = u'2018, HK Modding API'
+copyright = u'2020, HK Modding API'
 author = u'HK Modding API'
 
 # The short X.Y version
 version = u''
 # The full version, including alpha/beta/rc tags
-release = u'0.0.1'
+release = u'0.0.2'
 
 
 # -- General configuration ---------------------------------------------------

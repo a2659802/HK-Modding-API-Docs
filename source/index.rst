@@ -14,6 +14,7 @@ This is the documentation on Hollow Knights modding API.
    DnSpy
    Classes
    PlayerData
+   Reflection
    PlayMakerFSM
    Assets
    CanvasUtil
