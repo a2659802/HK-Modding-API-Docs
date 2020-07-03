@@ -13,7 +13,9 @@ This is the documentation on Hollow Knights modding API.
    Logging
    DnSpy
    Classes
+   Layers-And-Tags
    PlayerData
+   IL
    Reflection
    PlayMakerFSM
    Assets

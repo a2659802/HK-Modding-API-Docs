@@ -3,10 +3,12 @@ Classes
 
 Hollow Knight uses various classes to control different functions of the game. 
 For example, enemy health is controlled through the :code:`HealthManager` class and the player's movement is controlled through the :code:`HeroController` class.
-This section will not cover every single class in the game nor will it describe perfectly the classes it does feature. 
-Our hope is that you will eventually be able to figure out other classes by yourself and if not, you can always ask on Discord.
 
 .. note::
+    This section will not cover every single class in the game nor will it describe everything in the classes it does feature. 
+    Our hope is that you will eventually be able to figure out other classes by yourself and if not, you can always ask on Discord.
+
+.. tip::
     You can use DnSpy to look at each class's code and understand what it does.
 
 HeroController
@@ -34,6 +36,25 @@ Some of the player's constants like :code:`HeroController.instance.SHADOW_DASH_T
 Prefabs
 ~~~~~~~
 Some gameobjects that are related to the player such as the Grubberfly elegy beams (:code:`HeroController.instance.grubberFlyBeamPrefabL`) can be reached in HeroController.
+
+
+PlayerData
+^^^^^^^^^^
+This class contains all of the player's data. 
+This includes but is not limited to player's health, boss defeats, dialogue, charms, abilities, upgrades, and levers hit.
+Like HeroController, PlayerData is also a singleton which means you can access its data with :code:`PlayerData.instance`.
+
+Health, Soul, and Geo Management
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+PlayerData has methods specifically for adding and removing health, soul, and geo. I will go over the health ones which should give you a good idea of how the rest work.
+
+.. code-block::
+
+    PlayerData.instance.AddHealth(int amount) // Add 'amount' hp to the player.
+    PlayerData.instance.TakeHealth(int amount) // Remove 'amount' hp from the player.
+    PlayerData.instance.AddToMaxHealth(int amount) // Increase player's max hp by 'amount'.  
+
+
 
 
 HealthManager
@@ -76,7 +97,7 @@ HealthManager also contains a hook that runs when the enemy dies (healthManager.
         EnemyHitEffectsUninfected newEnemyHF = newEnemyGO.AddComponent<EnemyHitEffectsUninfected>();
         EnemyHitEffectsUninfected oldEnemyHF = oldEnemyGO.GetComponent<EnemyHitEffectsUninfected>();
         // Copies the different properties of oldEnemyHF into newEnemyHF
-        foreach (FieldInfo fi in typeof(EnemyHitEffectsUninfected).GetFields(BindingFlags.Instance | BindingFlags.Public))
+        foreach (FieldInfo fi in typeof(EnemyHitEffectsUninfected).GetFields())
         {
             fi.SetValue(newEnemyHF, fi.GetValue(oldEnemyHF));
         }
@@ -84,8 +105,12 @@ HealthManager also contains a hook that runs when the enemy dies (healthManager.
 
 DamageHero
 ^^^^^^^^^^
-Stuff3
+DamageHero is a component you can add to your gameobjects to make them damage the player.
 
-PlayerData
-^^^^^^^^^^
-Stuff4
+:code:`damageHero.damageDealt` allows you to change how much damage your object does. 
+:code:`damageHero.hazardType` indicates how the player should act when hit by your object. So if we set the hazardType to two, that puts it into spike mode where everytime the player gets hit by your object, the player gets teleported back.
+:code:`damageHero.shadowDashHazard` forces the player to take damage even if they use shadow dash.
+
+.. note::
+    In addition to adding the DamageHero compoenent, do not forget that your object must have a Collider of some type and its layer must be set to one that damages the player.
+
