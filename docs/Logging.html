@@ -1,0 +1,277 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Logging &mdash; Hollow Knight Modding Api 0.0.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="DnSpy" href="DnSpy.html" />
+    <link rel="prev" title="Charms" href="Charms.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Hollow Knight Modding Api
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Getting-Started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Hooks.html">Hook Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Charms.html">Charms</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Logging</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#how-to-log">How to Log</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#where-do-my-logs-go">Where do my logs go?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#logger-settings">Logger Settings</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="DnSpy.html">DnSpy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PlayerData.html">PlayerData</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Classes.html">Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Assets.html">Custom Assets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PlayMakerFSM.html">PlaymakerFSM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CanvasUtil.html">Canvas Util</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ModCommon.html">ModCommon</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Hollow Knight Modding Api</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Logging</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/Logging.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="logging">
+<h1>Logging<a class="headerlink" href="#logging" title="Permalink to this headline">¶</a></h1>
+<p>It’s likely you’ll want to debug your mod to ensure hooks are being triggered when they should, and that they are triggering on the correct data.
+Conveniently enough the API has logging built in.</p>
+<div class="section" id="how-to-log">
+<h2>How to Log<a class="headerlink" href="#how-to-log" title="Permalink to this headline">¶</a></h2>
+<p>Inside your main class, the one that extends <code class="code docutils literal notranslate"><span class="pre">Mod</span></code> you can simply use one of the following</p>
+<div class="highlight-c# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span> <span class="k">void</span> <span class="nf">Initialize</span><span class="p">(){</span>
+    <span class="n">Log</span><span class="p">(</span><span class="s">&quot;Something to be logged as long as logging is enabled&quot;</span><span class="p">);</span>
+    <span class="n">LogDebug</span><span class="p">(</span><span class="s">&quot;Something to be logged as long as debug logs are enabled&quot;</span><span class="p">);</span>
+    <span class="n">LogError</span><span class="p">(</span><span class="s">&quot;Something to be logged as long as error logs are enabled&quot;</span><span class="p">);</span>
+    <span class="n">LogFine</span><span class="p">(</span><span class="s">&quot;Something to be logged as long as dev logs are enabled&quot;</span><span class="p">);</span>
+    <span class="n">LogWarn</span><span class="p">(</span><span class="s">&quot;Something to be logged as long as warning logs are enabled&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Outside of your main class you’ll have to use <code class="code docutils literal notranslate"><span class="pre">Modding.Logger.Log</span></code> or any other logging level functions.</p>
+</div>
+<div class="section" id="where-do-my-logs-go">
+<h2>Where do my logs go?<a class="headerlink" href="#where-do-my-logs-go" title="Permalink to this headline">¶</a></h2>
+<p>Your logs will go into a file called <code class="code docutils literal notranslate"><span class="pre">ModLog.txt</span></code> in your save folder.
+Your save folder will be located at these locations based on operating system:</p>
+<p>Windows <code class="code docutils literal notranslate"><span class="pre">%appdata%/../locallow/team</span> <span class="pre">cherry/hollow</span> <span class="pre">knight/</span></code></p>
+<p>Mac     <code class="code docutils literal notranslate"><span class="pre">~/Library/Application</span> <span class="pre">Support/unity.Team</span> <span class="pre">Cherry.Hollow</span> <span class="pre">Knight/</span></code></p>
+</div>
+<div class="section" id="logger-settings">
+<h2>Logger Settings<a class="headerlink" href="#logger-settings" title="Permalink to this headline">¶</a></h2>
+<p>Previously in the How to Log section we mentioned logging being enabled, so below will be instructions on how to change settings related to logging.</p>
+<p>In our save folder there will be a file called <code class="code docutils literal notranslate"><span class="pre">ModdingApi.GlobalSettings.json</span></code> open this file in any editor and look for this entry (It may require manual addition), larger values are finer logging?</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;IntValues&quot;</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">&quot;keys&quot;</span><span class="o">:</span> <span class="p">[</span>
+        <span class="s2">&quot;LoggingLevel&quot;</span>
+    <span class="p">],</span>
+    <span class="s2">&quot;values&quot;</span><span class="o">:</span> <span class="p">[</span>
+        <span class="mi">2</span>
+    <span class="p">]</span>
+<span class="p">},</span>
+</pre></div>
+</div>
+<p>Additionally we may want our logs to show up in game, we can enable the in game console by setting this value:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;BoolValues&quot;</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">&quot;keys&quot;</span><span class="o">:</span> <span class="p">[</span>
+        <span class="s2">&quot;ShowDebugLogInGame&quot;</span>
+    <span class="p">],</span>
+    <span class="s2">&quot;values&quot;</span><span class="o">:</span> <span class="p">[</span>
+        <span class="kc">true</span>
+    <span class="p">]</span>
+<span class="p">},</span>
+</pre></div>
+</div>
+<p>This console can be toggled once this setting is set to true by pressing f10.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="DnSpy.html" class="btn btn-neutral float-right" title="DnSpy" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Charms.html" class="btn btn-neutral float-left" title="Charms" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2018, HK Modding API
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

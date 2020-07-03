@@ -1,0 +1,325 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Classes &mdash; Hollow Knight Modding Api 0.0.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="PlayerData" href="PlayerData.html" />
+    <link rel="prev" title="DnSpy" href="DnSpy.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Hollow Knight Modding Api
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Getting-Started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Hooks.html">Hook Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Charms.html">Charms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Logging.html">Logging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DnSpy.html">DnSpy</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Classes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#herocontroller">HeroController</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#cstate">cState</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#access-fsms">Access FSMs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#player-constants">Player Constants</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#prefabs">Prefabs</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#healthmanager">HealthManager</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#hp">HP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#methods">Methods</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ondeath">OnDeath</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#damagehero">DamageHero</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#playerdata">PlayerData</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="PlayerData.html">PlayerData</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PlayMakerFSM.html">PlaymakerFSM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Assets.html">Custom Assets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CanvasUtil.html">Canvas Util</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ModCommon.html">ModCommon</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Hollow Knight Modding Api</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Classes</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/Classes.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="classes">
+<h1>Classes<a class="headerlink" href="#classes" title="Permalink to this headline">¶</a></h1>
+<p>Hollow Knight uses various classes to control different functions of the game.
+For example, enemy health is controlled through the <code class="code docutils literal notranslate"><span class="pre">HealthManager</span></code> class and the player’s movement is controlled through the <code class="code docutils literal notranslate"><span class="pre">HeroController</span></code> class.
+This section will not cover every single class in the game nor will it describe perfectly the classes it does feature.
+Our hope is that you will eventually be able to figure out other classes by yourself and if not, you can always ask on Discord.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can use DnSpy to look at each class’s code and understand what it does.</p>
+</div>
+<div class="section" id="herocontroller">
+<h2>HeroController<a class="headerlink" href="#herocontroller" title="Permalink to this headline">¶</a></h2>
+<p>The HeroController class is attached to the player’s gameobject and handles their movement as well as other things related to the control of the player such as the soul level.</p>
+<p>This class is a singleton which means there is always only one instance of it in the game which you can access with <code class="code docutils literal notranslate"><span class="pre">HeroController.instance</span></code>.
+One common way to access the player’s gameobject is through <code class="code docutils literal notranslate"><span class="pre">HeroController.instance.gameobject</span></code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>There are times such as during scene transitions where HeroController.instance may not exist so be sure to check if it is not null when you are not sure</p>
+</div>
+<div class="section" id="cstate">
+<h3>cState<a class="headerlink" href="#cstate" title="Permalink to this headline">¶</a></h3>
+<p>This can be used to check and set whether the player is doing a certain action. For example, <code class="code docutils literal notranslate"><span class="pre">HeroController.instance.cState.attacking</span></code> is a bool that tells you whether the player is slashing horizontally.</p>
+</div>
+<div class="section" id="access-fsms">
+<h3>Access FSMs<a class="headerlink" href="#access-fsms" title="Permalink to this headline">¶</a></h3>
+<p>You can access different FSMs (covered in the PlaymakerFSM section) related to the player such as <code class="code docutils literal notranslate"><span class="pre">HeroController.instance.spellControl</span></code> which gives you the FSM that handles the player’s spells.</p>
+</div>
+<div class="section" id="player-constants">
+<h3>Player Constants<a class="headerlink" href="#player-constants" title="Permalink to this headline">¶</a></h3>
+<p>Some of the player’s constants like <code class="code docutils literal notranslate"><span class="pre">HeroController.instance.SHADOW_DASH_TIME</span></code>, which is the cooldown time between each shadow dash, can be read/changed here.</p>
+</div>
+<div class="section" id="prefabs">
+<h3>Prefabs<a class="headerlink" href="#prefabs" title="Permalink to this headline">¶</a></h3>
+<p>Some gameobjects that are related to the player such as the Grubberfly elegy beams (<code class="code docutils literal notranslate"><span class="pre">HeroController.instance.grubberFlyBeamPrefabL</span></code>) can be reached in HeroController.</p>
+</div>
+</div>
+<div class="section" id="healthmanager">
+<h2>HealthManager<a class="headerlink" href="#healthmanager" title="Permalink to this headline">¶</a></h2>
+<p>The HealthManager class controls enemy health and death.
+Unlike the HeroController class, this class is not a singleton since each enemy has their own instance of HealthManager.
+Remember that you can obtain the HealthManager (or any Unity component) of your desired enemy using the command: <code class="code docutils literal notranslate"><span class="pre">yourEnemyGameObject.GetComponent&lt;HealthManager&gt;()</span></code>.</p>
+<div class="section" id="hp">
+<h3>HP<a class="headerlink" href="#hp" title="Permalink to this headline">¶</a></h3>
+<p>Once you have a HealthManager, you can read/change the hp of the enemy using <code class="code docutils literal notranslate"><span class="pre">healthManager.hp</span></code>.</p>
+</div>
+<div class="section" id="methods">
+<h3>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h3>
+<p>Use <code class="code docutils literal notranslate"><span class="pre">healthManager.Hit(HitInstance</span> <span class="pre">hit)</span></code> to manually force the enemy to take damage in a customized fashion. HitInstance contains parameters such as DamageDealt, AttackType, Direction, and more.</p>
+<p>You can manually kill an enemy using <code class="code docutils literal notranslate"><span class="pre">healthManager.Die(float?</span> <span class="pre">attackDir,</span> <span class="pre">AttackType</span> <span class="pre">attType,</span> <span class="pre">bool</span> <span class="pre">ignoreEvasion)</span></code>.</p>
+</div>
+<div class="section" id="ondeath">
+<h3>OnDeath<a class="headerlink" href="#ondeath" title="Permalink to this headline">¶</a></h3>
+<p>HealthManager also contains a hook that runs when the enemy dies (healthManager.hp reaches 0). This hook works the same way as the hooks in hook section.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>If you are adding a new enemy and want to copy a preexisting enemy’s hit effects, you can do this:</p>
+<div class="highlight-c# notranslate"><div class="highlight"><pre><span></span><span class="c1">// Add HealthManager to your new enemy and get the HealthManager of old enemy.</span>
+<span class="n">HealthManager</span> <span class="n">newEnemyHM</span> <span class="p">=</span> <span class="n">newEnemyGO</span><span class="p">.</span><span class="n">AddComponent</span><span class="p">&lt;</span><span class="n">HealthManager</span><span class="p">&gt;();</span>
+<span class="n">HealthManager</span> <span class="n">oldEnemyHM</span> <span class="p">=</span> <span class="n">oldEnemyGO</span><span class="p">.</span><span class="n">GetComponent</span><span class="p">&lt;</span><span class="n">HealthManager</span><span class="p">&gt;();</span>
+<span class="c1">// Copies the different properties of oldEnemyHM into newEnemyHM</span>
+<span class="k">foreach</span> <span class="p">(</span><span class="n">FieldInfo</span> <span class="n">fi</span> <span class="k">in</span> <span class="k">typeof</span><span class="p">(</span><span class="n">HealthManager</span><span class="p">).</span><span class="n">GetFields</span><span class="p">(</span><span class="n">BindingFlags</span><span class="p">.</span><span class="n">Instance</span> <span class="p">|</span> <span class="n">BindingFlags</span><span class="p">.</span><span class="n">NonPublic</span><span class="p">)</span>
+    <span class="p">.</span><span class="n">Where</span><span class="p">(</span><span class="n">x</span> <span class="p">=&gt;</span> <span class="n">x</span><span class="p">.</span><span class="n">Name</span><span class="p">.</span><span class="n">Contains</span><span class="p">(</span><span class="s">&quot;Prefab&quot;</span><span class="p">)))</span>
+<span class="p">{</span>
+    <span class="n">fi</span><span class="p">.</span><span class="n">SetValue</span><span class="p">(</span><span class="n">newEnemyHM</span><span class="p">,</span> <span class="n">fi</span><span class="p">.</span><span class="n">GetValue</span><span class="p">(</span><span class="n">oldEnemyHM</span><span class="p">));</span>
+<span class="p">}</span>
+
+<span class="c1">// Add EnemyHitEffectsUninfected to your new enemy and get the EnemyHitEffectsUninfected of old enemy.</span>
+<span class="c1">// EnemyHitEffectsUninfected is the class that contains getting hit effects for uninfected enemies (like the mantis).</span>
+<span class="n">EnemyHitEffectsUninfected</span> <span class="n">newEnemyHF</span> <span class="p">=</span> <span class="n">newEnemyGO</span><span class="p">.</span><span class="n">AddComponent</span><span class="p">&lt;</span><span class="n">EnemyHitEffectsUninfected</span><span class="p">&gt;();</span>
+<span class="n">EnemyHitEffectsUninfected</span> <span class="n">oldEnemyHF</span> <span class="p">=</span> <span class="n">oldEnemyGO</span><span class="p">.</span><span class="n">GetComponent</span><span class="p">&lt;</span><span class="n">EnemyHitEffectsUninfected</span><span class="p">&gt;();</span>
+<span class="c1">// Copies the different properties of oldEnemyHF into newEnemyHF</span>
+<span class="k">foreach</span> <span class="p">(</span><span class="n">FieldInfo</span> <span class="n">fi</span> <span class="k">in</span> <span class="k">typeof</span><span class="p">(</span><span class="n">EnemyHitEffectsUninfected</span><span class="p">).</span><span class="n">GetFields</span><span class="p">(</span><span class="n">BindingFlags</span><span class="p">.</span><span class="n">Instance</span> <span class="p">|</span> <span class="n">BindingFlags</span><span class="p">.</span><span class="n">Public</span><span class="p">))</span>
+<span class="p">{</span>
+    <span class="n">fi</span><span class="p">.</span><span class="n">SetValue</span><span class="p">(</span><span class="n">newEnemyHF</span><span class="p">,</span> <span class="n">fi</span><span class="p">.</span><span class="n">GetValue</span><span class="p">(</span><span class="n">oldEnemyHF</span><span class="p">));</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="damagehero">
+<h2>DamageHero<a class="headerlink" href="#damagehero" title="Permalink to this headline">¶</a></h2>
+<p>Stuff3</p>
+</div>
+<div class="section" id="playerdata">
+<h2>PlayerData<a class="headerlink" href="#playerdata" title="Permalink to this headline">¶</a></h2>
+<p>Stuff4</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="PlayerData.html" class="btn btn-neutral float-right" title="PlayerData" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="DnSpy.html" class="btn btn-neutral float-left" title="DnSpy" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2018, HK Modding API
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

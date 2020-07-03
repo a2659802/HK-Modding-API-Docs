@@ -1,0 +1,397 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>CustomEnemySpeed &mdash; Hollow Knight Modding Api 0.0.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> Hollow Knight Modding Api
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Getting-Started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Hooks.html">Hook Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Charms.html">Charms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Logging.html">Logging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../DnSpy.html">DnSpy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../PlayerData.html">PlayerData</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Classes.html">Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Assets.html">Custom Assets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../PlayMakerFSM.html">PlaymakerFSM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../CanvasUtil.html">Canvas Util</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ModCommon.html">ModCommon</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Hollow Knight Modding Api</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>CustomEnemySpeed</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/ModCommon/Components/CustomEnemySpeed.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="customenemyspeed">
+<h1>CustomEnemySpeed<a class="headerlink" href="#customenemyspeed" title="Permalink to this headline">¶</a></h1>
+<p>Class in ModCommon / Inherits from MonoBehavior / Implemented in Components/CustomEnemySpeed.cs</p>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>A component which, when attached to a Hollow Knight enemy object, can make this enemy infinite, and increase in difficulty over time.</p>
+</div>
+<div class="section" id="properties">
+<h2>Properties<a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Property</p></th>
+<th class="head"><p>Default state</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>active</p></td>
+<td><p>false</p></td>
+<td><p>Determines if the component is running. Setting this true with SetActive will cause this component to track damage dealt on the enemy. It will not modify the enemy’s speed.</p></td>
+</tr>
+<tr class="row-odd"><td><p>speedModActive</p></td>
+<td><p>false</p></td>
+<td><p>Determines if the component is applying its speed modifications to the enemy it is attached to. Setting this to true through StartSpeedMod() will apply all speed modifications needed. It will also automatically set active to true with will cause the component to start tracking damage dealt.</p></td>
+</tr>
+<tr class="row-even"><td><p>cachedAnimator</p></td>
+<td><p>gameObject GetComponent</p></td>
+<td><p>Determines the animator which contains the animations which will be affected by this component. If the animator used to animate the enemy isn’t on the gameobject this component is attached to (for example, if it’s attached to a child game object instead), you can set this property before adding any animations to apply it to that tk2dSpriteAnimator instead.</p></td>
+</tr>
+<tr class="row-odd"><td><p>cachedHealthManager</p></td>
+<td><p>gameObject GetComponent</p></td>
+<td><p>Determines the HealthManager which contains the health for this enemy. If this HealthManager used to determine this enemy’s health isn’t on the gameobject this component is attached to (for example, if it’s attached to a parent game object instead), you can set this property before setting this component active to monitor that HealthManager instead.</p></td>
+</tr>
+<tr class="row-even"><td><p>damageDone</p></td>
+<td><p>0</p></td>
+<td><p>Can be read to get the amount of damage the character has done to this enemy. Is automatically set to the enemy’s maximum hp minus their current HP.</p></td>
+</tr>
+<tr class="row-odd"><td><p>danceSpeed</p></td>
+<td><p>2.0</p></td>
+<td><p>Determines, using a weighted averaging system, the amount by which the enemy’s speed should be modified. The default value of 2.0 will use the numbers provided in AnimationData and WaitData verbatim. 1.0 will use the original vanilla values. Details on this behavior are discussed below.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="structures">
+<h2>Structures<a class="headerlink" href="#structures" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="animationdata">
+<h3>AnimationData<a class="headerlink" href="#animationdata" title="Permalink to this headline">¶</a></h3>
+<p>WaitData is a simple structure which is used to specify information about an enemy’s animation state. It’s in the following format:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Property</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>AnimationName</p></td>
+<td><p>A string containing the name of the tk2dSpriteAnimationClip that you are interested in modifying. CustomEnemySpeed will attempt to load this clip from the cachedAnimator (which is usually the tk2dSpriteAnimator on the gameobject, unless you’ve explicitly set it otherwise).</p></td>
+</tr>
+<tr class="row-odd"><td><p>AnimationSpeedFactor</p></td>
+<td><p>This is the speed factor of the Animation. This means that the animation’s framerate will be <strong>multiplied</strong> by this number. Thus a value of 3.0 will make this enemy’s animation run three times as quickly.</p></td>
+</tr>
+<tr class="row-even"><td><p>DefaultAnimationSpeed</p></td>
+<td><p>This value represents the normal framerate of the animation. It is used internally by CustomEnemySpeed, and can be read once the wait is loaded. <strong>Do not set this value directly when creating an AnimationData to be added to CustomEnemySpeed, it will be ignored and you are wasting your time.</strong></p></td>
+</tr>
+</tbody>
+</table>
+<p>Example:</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="n">AnimationData</span> <span class="n">a</span> <span class="p">=</span> <span class="k">new</span> <span class="n">CustomEnemySpeed</span><span class="p">.</span><span class="n">AnimationData</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="c1">// You can find the animation name by dumping the gameobject with</span>
+    <span class="c1">// PrintSceneHierarchyTree(gameObject, &quot;file.txt&quot;);</span>
+    <span class="c1">// and examining the FSM it dumped for Tk2dPlayAnimation or similar.</span>
+    <span class="c1">// These will contain a string called &quot;clipName&quot; which details the animation that</span>
+    <span class="c1">// will be played.</span>
+    <span class="n">AnimationName</span> <span class="p">=</span> <span class="s">&quot;Cast Antic&quot;</span><span class="p">,</span>
+    <span class="c1">// This will make the particular animation run at 0.7 times normal speed.</span>
+    <span class="c1">// Be careful with modifying animations. It&#39;s possible that changing their</span>
+    <span class="c1">// speed will have weird consequences. For example- slowing down grimm&#39;s</span>
+    <span class="c1">// upward slash animation causes him to travel farther along the floor before</span>
+    <span class="c1">// slashing upwards. To fix this his velocity on this state must also be modified.</span>
+    <span class="c1">// This is currently beyond the scope of CustomEnemySpeed V1.</span>
+    <span class="n">AnimationSpeedFactor</span> <span class="p">=</span> <span class="m">0.7f</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="waitdata">
+<h3>WaitData<a class="headerlink" href="#waitdata" title="Permalink to this headline">¶</a></h3>
+<p>WaitData is a simple structure which is used to specify information about an enemy’s wait state. It’s in the following format:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Property</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>FSMName</p></td>
+<td><p>A string containing the name of the PlayMakerFSM containing the FSMState with the wait you are interested in changing. Often “Control” for newer and better designed enemies, although some have multiple FSMs each with their own sets of waits.</p></td>
+</tr>
+<tr class="row-odd"><td><p>FSMStateName</p></td>
+<td><p>A string containing the name of the FSMState with the wait you are interested in changing. It’s highly recommended one looks at an FSM dump (either the scene dump, the modcommon gameobject dump, or the one generated from the FSM mod) to figure out the names of the states they are interested in modifying.</p></td>
+</tr>
+<tr class="row-even"><td><p>WaitTimeInverseFactor</p></td>
+<td><p>This is the speed factor of the Wait state. That means that the Wait’s time will be <strong>divided</strong> by this number. Thus a value of 3.0 will make the enemy’s wait proceed thrice as quickly, making this enemy’s state three times as fast. This is done for two reasons: Chiefly this behavior is easier to imagine than the opposite (a value of 0.3333 making the enemy 3 times normal speed). Secondly, to match the way AnimationSpeedFactor functions in AnimationData.</p></td>
+</tr>
+<tr class="row-odd"><td><p>DefaultWaitTime</p></td>
+<td><p>This value is used internally by CustomEnemySpeed, and can be read once the wait is loaded. <strong>Do not set this value directly when creating a WaitData to be added to CustomEnemySpeed, it will be ignored and you are wasting your time.</strong></p></td>
+</tr>
+</tbody>
+</table>
+<p>Example:</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="n">WaitData</span> <span class="n">w</span> <span class="p">=</span> <span class="k">new</span> <span class="n">CustomEnemySpeed</span><span class="p">.</span><span class="n">WaitData</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="c1">// Like most modern enemies, the FSM is called control</span>
+    <span class="n">FSMName</span> <span class="p">=</span> <span class="s">&quot;Control&quot;</span><span class="p">,</span>
+    <span class="c1">// You can find the state name by dumping the gameobject with</span>
+    <span class="c1">// PrintSceneHierarchyTree(gameObject, &quot;file.txt&quot;);</span>
+    <span class="c1">// and examining the FSM it dumped for Waits.</span>
+    <span class="c1">// Or by using the FSM mod.</span>
+    <span class="n">FSMStateName</span> <span class="p">=</span> <span class="s">&quot;Slash Antic&quot;</span><span class="p">,</span>
+    <span class="c1">// This makes this particular wait twice as fast by default.</span>
+    <span class="n">WaitTimeInverseFactor</span> <span class="p">=</span> <span class="m">2.0f</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="public-methods">
+<h2>Public Methods<a class="headerlink" href="#public-methods" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Method</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>void SetHealthManager (HealthManager hm)</p></td>
+<td><p>Sets the tracked HealthManager to a custom HM. Call this only if the HealthManager you are interested in tracking is not on the gameobject that this component is attached to. This set is done indirectly to update maximum health to this new healthmanager.</p></td>
+</tr>
+<tr class="row-odd"><td><p>void SetEnemyMaxHealth (int health)</p></td>
+<td><p>Sets the maximum health of the enemy. If you call this while the player has done damage to the enemy it will set their new health to maximum health - damageDone. If this value is less than or equal to zero it will kill the enemy.</p></td>
+</tr>
+<tr class="row-even"><td><p>void OverrideDamageDone (int dmg)</p></td>
+<td><p>Sets the damageDone value to a different integer, then modifies the enemy health manager to reflect this amount of damage having been dealt. If damageDone exceeds the maximum health of the enemy, they will be killed.</p></td>
+</tr>
+<tr class="row-odd"><td><p>void AddAnimationData / void AddWaitData</p></td>
+<td><p>Adds a AnimationData or WaitData struct to the list of animations/waits with speeds that should be modified. If speedModActive is true, it will also modify the speed of this animation/wait immediately. Otherwise it will simply store it until this is enabled.</p></td>
+</tr>
+<tr class="row-even"><td><p>bool RemoveAnimationData/ bool RemoveWaitData</p></td>
+<td><p>Removes an AnimationData or WaitData from the list of animations/waits with speeds that should be modified. If speedModActive is true, it will also restore the speed of this animation/wait to the original value. These functions return true if they successfully found and removed the data, and false otherwise.</p></td>
+</tr>
+<tr class="row-odd"><td><p>void StartSpeedMod</p></td>
+<td><p>This will modify the speeds of all animations and waits which have been added using AddAnimationData or AddWaitData. It also modifies any future added animations or waits automatically. Finally, it sets the CustomEnemySpeed active causing it to start tracking damage dealt.</p></td>
+</tr>
+<tr class="row-even"><td><p>void RestoreOriginalSpeed</p></td>
+<td><p>This will restore all the default animation and wait speeds. It also stops any future added animations or waits from modifying any speeds. It does not set CustomEnemySpeed to inactive, so it will continue tracking damage dealt.</p></td>
+</tr>
+<tr class="row-odd"><td><p>void updateDanceSpeed[sic] (double newDanceSpeed)</p></td>
+<td><p>This will modify the danceSpeed to a new value, which, in turn, will affect the speed at which every animation and wait should be run at. See below.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="dancespeed-explained">
+<h2>danceSpeed Explained<a class="headerlink" href="#dancespeed-explained" title="Permalink to this headline">¶</a></h2>
+<p>Consider this: You’re making a nightmare version of the mega moss charger fight. So you take some of the charger’s animations and waits and speed them up to make this fight more enjoyable and difficult. To you, these speeds are perfect, and the people who playtest your mod agree that all of the animations and waits are at the same difficulty level, that is not one moss charger attack feels too fast or slow in comparison to the others. But, they do complain about the difficulty as a whole, some find it too hard and others too easy. What if there was an easy way you could provide difficulty levels to your new god-fight?  Or maybe you want to have it get harder as the player does more damage to it. In either case, danceSpeed is your friend, and one of the core benefits of using CustomEnemySpeed.</p>
+<p>danceSpeed is designed as a corse way for balancing enemy movement speeds. It affects all animations and waits which are added to the CustomEnemySpeed class. It’s designed to maintain the difficulty between attacks (if no one attack is harder or easier to dodge than others at dance speed 1.5, no one attack will be harder or easier to dodge at 2.5 or any other number). What’s more, it allows for dynamic readjustment of enemy speeds. It can be explained as such:</p>
+<p>danceSpeed is the number of times your speed modifiers are applied to the enemy, plus one. A danceSpeed of 1.0 applies your modifiers 0 times, leaving you with the original vanilla speeds. 2.0, exactly once, 3.0 twice, so making an animation 1.75 times as fast will, with a danceSpeed of 3.0, make it (1.75 * 2 or ) 2.5 times as fast.</p>
+<p><a class="reference external" href="https://www.desmos.com/calculator/mznwkgvyoa">this graph</a> shows the danceSpeed variable on the x axis, and the speed of a given wait or animation (relative to vanilla hollow knight) on the y axis. a is the speed factor of this animation. Drag a around and see how the animation speed changes at different dance speeds.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2018, HK Modding API
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -38,11 +38,23 @@ Some gameobjects that are related to the player such as the Grubberfly elegy bea
 
 HealthManager
 ^^^^^^^^^^^^^
-The HealthManager class controls enemy health and death.
-Unlike the HeroController class, this class is not a singleton since each enemy has their own instance of HealthManager.
-
+The HealthManager class controls enemy health and death. 
+Unlike the HeroController class, this class is not a singleton since each enemy has their own instance of HealthManager. 
 Remember that you can obtain the HealthManager (or any Unity component) of your desired enemy using the command: :code:`yourEnemyGameObject.GetComponent<HealthManager>()`.
 
+HP 
+~~
+Once you have a HealthManager, you can read/change the hp of the enemy using :code:`healthManager.hp`.
+
+Methods
+~~~~~~~
+Use :code:`healthManager.Hit(HitInstance hit)` to manually force the enemy to take damage in a customized fashion. HitInstance contains parameters such as DamageDealt, AttackType, Direction, and more.
+
+You can manually kill an enemy using :code:`healthManager.Die(float? attackDir, AttackType attType, bool ignoreEvasion)`.
+
+OnDeath
+~~~~~~~
+HealthManager also contains a hook that runs when the enemy dies (healthManager.hp reaches 0). This hook works the same way as the hooks in hook section.
 
 .. tip::
     If you are adding a new enemy and want to copy a preexisting enemy's hit effects, you can do this:
