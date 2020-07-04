@@ -8,6 +8,7 @@ This is the documentation on Hollow Knights modding API.
    :hidden:
    
    Getting-Started
+   Videos
    Hooks
    PlayerData
    Charms
