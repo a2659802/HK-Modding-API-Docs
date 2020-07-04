@@ -9,12 +9,12 @@ This is the documentation on Hollow Knights modding API.
    
    Getting-Started
    Hooks
+   PlayerData
    Charms
    Logging
    DnSpy
    Classes
    Layers-And-Tags
-   PlayerData
    IL
    Reflection
    PlayMakerFSM
