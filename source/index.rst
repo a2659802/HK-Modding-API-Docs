@@ -1,3 +1,7 @@
+.. raw:: html
+
+   <?php Header("Cache-Control: max-age=3000, must-revalidate"); ?>
+
 Hollow Knight Modding Api's Documentation!
 ==========================================
 
@@ -10,15 +14,16 @@ This is the documentation on Hollow Knights modding API.
    Getting-Started
    Videos
    Hooks
+   ModdingAPI
    PlayerData
    Charms
    Logging
    DnSpy
    Classes
+   PlayMakerFSM
    Layers-And-Tags
    IL
    Reflection
-   PlayMakerFSM
    Assets
    CanvasUtil
    ModCommon

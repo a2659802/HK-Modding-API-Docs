@@ -54,7 +54,7 @@ PlayerData has methods specifically for adding and removing health, soul, and ge
     PlayerData.instance.TakeHealth(int amount) // Remove 'amount' hp from the player.
     PlayerData.instance.AddToMaxHealth(int amount) // Increase player's max hp by 'amount'.  
 
-
+A near-full reference list to PlayerData can be found in the PlayerData section. 
 
 
 HealthManager
