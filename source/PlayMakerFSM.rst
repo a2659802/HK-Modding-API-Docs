@@ -81,19 +81,19 @@ So to change the speed of the Aspid Hunter's bullets, we can do: :code:`fsm.GetA
 Add Actions
 ~~~~~~~~~~~
 We are given three different ways to add our own actions into a state. The first is to simply insert a new action with InsertAction():
-:code:`fsm.InsertAction("State_Name",index, New_Action)`. Let's say we want to add a sound to when the Aspid fires infection, we can do:
+:code:`fsm.InsertAction("State_Name", New_Action, index)`. Let's say we want to add a sound to when the Aspid fires infection, we can do:
 
 .. code-block:: c#
 
     // First we store the old AudioPlay so we could use it later
     var act1 = fsm.GetAction<AudioPlay>("Fire",0); 
     // Now we make our new action using act1
-    fsm.InsertAction("Fire",0, new AudioPlay()
+    fsm.InsertAction("Fire", new AudioPlay()
     {
         gameObject = act.gameobject,
         volume = 1f,
         oneShotClip = Your_Audio_Clip
-    });
+    }, 0);
 
 We can also insert our own methods and couroutines as well. Here is a simple example that prints "Hello World" whenever the Aspid fires:
 
