@@ -99,6 +99,9 @@ We can also insert our own methods and couroutines as well. Here is a simple exa
 
 :code:`fsm.InsertMethod("Fire",0, () => Log("Hello World!"));`
 
+.. warning::
+    InsertMethod and InsertCoroutine have the "int index" as the second parameter while InsertAction has it as the last parameter... Yes, this is incredibly questionable.
+
 Remove Action
 ~~~~~~~~~~~~~
 Remove action at index ind with: :code:`fsm.RemoveAction("State", ind)`. 
