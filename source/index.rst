@@ -21,9 +21,9 @@ This is the documentation on Hollow Knights modding API.
    DnSpy
    Classes
    PlayMakerFSM
+   Assets
    Layers-And-Tags
    IL
    Reflection
-   Assets
    CanvasUtil
    ModCommon
