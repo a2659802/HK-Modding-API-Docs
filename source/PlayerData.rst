@@ -94,7 +94,7 @@ Below are collectable related members and their respective default values.
     pd.dreamOrbs = 0;
     // Amount of essence the player has already spent
     pd.dreamOrbsSpent = 0;
-    // Ghost coins? doesn't appear to be used anywhere
+    // Amount of Geo the Shade has stored
     pd.ghostCoins = 0;
     // Amount of Pale Ore the player has
     pd.ore = 0;
@@ -273,6 +273,15 @@ Below are other members and their respective default values.
     pd.scenesMapped = new List<string>();
     // Sadly appears to be unused
     pd.playerStory = new List<string>();
+
+Various Booleans
+^^^^^^^^^^^^^^^^
+
+I chose to not include any of the flags used for different parts of Hollow Knight, as those would unnecessarily bloat this document.
+
+Such flags would include:
+- Entered Godhome
+- The White Palace Orbs
 
 NPC Dialogue
 ^^^^^^^^^^^^
