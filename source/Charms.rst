@@ -5,6 +5,9 @@ Ownership of charms can be checked with the :code:`PlayerData.instance.gotCharm_
 Checking if they are equipped can be checked with :code:`PlayerData.instance.equippedCharm_X`.
 The cost to equip charms can be changed with :code:`PlayerData.instance.charmCost_X`.
 
+.. note::
+   Using `PlayerData.instance.GetBool("gotCharm_X")` or `PlayerData.instance.GetInt("charmCost_X")` is prefered, as that way other mods can make their changes to the desired values.
+
 
 +----+------------------------------+-------------------+-------------------------------+
 | ID | Name                         | LangName          | Add.Bool                      |
@@ -107,3 +110,14 @@ The cost to equip charms can be changed with :code:`PlayerData.instance.charmCos
 |    +------------------------------+-------------------+                               +
 |    | Carefree Melody              | CHARM_NAME_40_N   | grimmChildLevel               |
 +----+------------------------------+-------------------+-------------------------------+
+
+Custom Charms
+^^^^^^^^^^^^^
+
+Using CharmHelper_, it is easy to add completely new charms to the game. For help there is also CharmHelper_Example_.
+
+
+
+
+.. _CharmHelper: https://github.com/SFGrenade/ModdingHelper/blob/master/CharmHelper.cs
+.. _CharmHelper_Example: https://github.com/SFGrenade/ModdingHelper/blob/master/CharmHelper_Example.cs
