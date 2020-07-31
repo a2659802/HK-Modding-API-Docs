@@ -1,5 +1,5 @@
 PlayerData Reference
-==========
+====================
 
 PlayerData is the main component of holding and saving various different aspects of the player's progress throughout the game.
 It holds a lot of data, most of which is used in game.
@@ -60,21 +60,21 @@ Below are collectable related members and their respective default values.
     
     // Amount of Wanderer's Journals the player has
     pd.trinket1 = 0;
-    // Wether the player has found one
+    // Whether the player has found one
     pd.foundTrinket1 = false;
     // Amount of Hallownest Seals the player has
     pd.trinket2 = 0;
-    // Wether the player has found one
+    // Whether the player has found one
     pd.foundTrinket2 = false;
     // Amount of King's Idols the player has
     pd.trinket3 = 0;
-    // Wether the player has found one
+    // Whether the player has found one
     pd.foundTrinket3 = false;
     // Amount of Arcane Eggs the player has
     pd.trinket4 = 0;
-    // Wether the player has found one
+    // Whether the player has found one
     pd.foundTrinket4 = false;
-    // Wether the player doesn't have the given trinket
+    // Whether the player doesn't have the given trinket
     pd.noTrinket1 = false;
     pd.noTrinket2 = false;
     pd.noTrinket3 = false;
@@ -130,11 +130,11 @@ Below are Ability & Item related members and their respective default values.
     pd.hasCityKey = false;
     // Shopkeeper's Key
     pd.hasSlykey = false;
-    // Wether the player gave sly his key
+    // Whether the player gave sly his key
     pd.gaveSlykey = false;
     // Elegant Key
     pd.hasWhiteKey = false;
-    // Wether the player used the Elegant Key
+    // Whether the player used the Elegant Key
     pd.usedWhiteKey = false;
     // Unused key to Menderbug's house
     pd.hasMenderKey = false;
@@ -148,16 +148,16 @@ Below are Ability & Item related members and their respective default values.
     pd.hasKingsBrand = false;
     // Delicate Flower
     pd.hasXunFlower = false;
-    // Wether the Delicate Flower is broken
+    // Whether the Delicate Flower is broken
     pd.xunFlowerBroken = false;
     // How many times the Delicate Flower has been broken
     pd.xunFlowerBrokeTimes = 0;
-    // Wether the Delicate Flower was delivered
+    // Whether the Delicate Flower was delivered
     pd.xunFlowerGiven = false;
     // Godtuner
     pd.hasGodfinder = false;
 
-    // Wether the player has any spell
+    // Whether the player has any spell
     pd.hasSpell = false;
     // 1: Vengeful Spirit; 2: Shade Soul
     pd.fireballLevel = 0;
@@ -165,7 +165,7 @@ Below are Ability & Item related members and their respective default values.
     pd.quakeLevel = 0;
     // 1: Howling Wraiths; 2: Abyss Shriek
     pd.screamLevel = 0;
-    // Wether the player has any nail art
+    // Whether the player has any nail art
     pd.hasNailArt = false;
     // Cyclone Slash
     pd.hasCyclone = false;
@@ -173,7 +173,7 @@ Below are Ability & Item related members and their respective default values.
     pd.hasDashSlash = false;
     // Great Slash
     pd.hasUpwardSlash = false;
-    // Wether the player has all nail arts
+    // Whether the player has all nail arts
     pd.hasAllNailArts = false;
     // Dream Nail
     pd.hasDreamNail = false;
@@ -193,34 +193,34 @@ Below are Charm related members and their respective default values.
     pd.charmSlots = 3;
     // How many charm notches are used
     pd.charmSlotsFilled = 0;
-    // Wether the player has a charm
+    // Whether the player has a charm
     pd.hasCharm = false;
     // List of equipped charms
     pd.equippedCharms = new List<int>();
-    // Wether the player had the message about charms
+    // Whether the player had the message about charms
     pd.charmBenchMsg = false;
     // Amount of charms the player has
     pd.charmsOwned = 0;
-    // Wether the player can overcharm
+    // Whether the player can overcharm
     pd.canOvercharm = false;
-    // Wether the player is overcharmed
+    // Whether the player is overcharmed
     pd.overcharmed = false;
     
     // Continues from charm 1 all the way to 40
-    // Wether the player owns the charm
+    // Whether the player owns the charm
     pd.gotCharm_1 = false;
-    // Wether the player has the charm equipped
+    // Whether the player has the charm equipped
     pd.equippedCharm_1 = false;
     // Amount of notches the charm costs (min 0 - max 6)
     pd.charmCost_1 = 1;
-    // Wether the charm is freshly obtained
+    // Whether the charm is freshly obtained
     pd.newCharm_1 = true;
     
-    // Wether the health charm is unbreakable
+    // Whether the health charm is unbreakable
     pd.fragileHealth_unbreakable = false;
-    // Wether the greed charm is unbreakable
+    // Whether the greed charm is unbreakable
     pd.fragileGreed_unbreakable = false;
-    // Wether the strength charm is unbreakable
+    // Whether the strength charm is unbreakable
     pd.fragileStrength_unbreakable = false;
     // State of the Kingsoul / Void Heart charm (min 0 - max 4)
     pd.royalCharmState = 0;
@@ -234,15 +234,15 @@ Below are Journal related members and their respective default values.
 
 .. code-block:: c#
     
-    // Wether the player has the Hunter's Journal
+    // Whether the player has the Hunter's Journal
     pd.hasJournal = false;
     // Last entry looked at
     pd.lastJournalItem = 0;
-    // Wether the player has seen the journal message
+    // Whether the player has seen the journal message
     pd.seenJournalMsg = false;
-    // Wether the player has seen the hunter message
+    // Whether the player has seen the hunter message
     pd.seenHunterMsg = false;
-    // Wether the player has a full journal
+    // Whether the player has a full journal
     pd.fillJournal = false;
     // Amount of completed entries
     pd.journalEntriesCompleted = 0;
@@ -251,11 +251,11 @@ Below are Journal related members and their respective default values.
     // Amount of total entries
     pd.journalEntriesTotal = 0;
 
-    // Wether you unlocked the journal entry of an enemy
+    // Whether you unlocked the journal entry of an enemy
     pd.killedDummy = false;
     // Amount of enemies left to kill before unlocking the entry
     pd.killsDummy = 0;
-    // Wether the entry is freshly unlocked
+    // Whether the entry is freshly unlocked
     pd.newDataDummy = false;
 
 Misc

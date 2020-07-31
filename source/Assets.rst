@@ -94,7 +94,7 @@ Read the assetbundle using :code:`Assetbundle.LoadFromMemory()`, like so:
 .. code-block:: c#
 
    string bundleN = "lordbundle";
-   AssetBundle ab = null;
+   AssetBundle ab = null;  // You probably want this to be defined somewhere more global.
    Assembly asm = Assembly.GetExecutingAssembly();
    foreach (string res in asm.GetManifestResourceNames())
    {
@@ -110,6 +110,27 @@ Read the assetbundle using :code:`Assetbundle.LoadFromMemory()`, like so:
             ab = AssetBundle.LoadFromMemory(buffer); // Store this somewhere you can access again.
       }
    }
+
+Or for an easier approach, use :code:`Assetbundle.LoadFromStream()`:
+
+.. code-block:: c#
+
+   string bundleN = "lordbundle";
+   AssetBundle ab = null; // You probably want this to be defined somewhere more global.
+   Assembly asm = Assembly.GetExecutingAssembly();
+   foreach (string res in asm.GetManifestResourceNames())
+   {
+      using (Stream s = asm.GetManifestResourceStream(res))
+      {
+         if (s == null) continue;
+         string bundleName = Path.GetExtension(res).Substring(1);
+         if (bundleName != bundleN) continue;
+         Log("Loading bundle " + bundleName);
+         // Allows us to directly load from stream.
+         ab = AssetBundle.LoadFromStream(s); // Store this somewhere you can access again.
+      }
+   }
+
 
 Loading content from bundle
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -156,3 +177,24 @@ Code I used to load the prefab.
    go.transform.position = HeroController.instance.transform.position;
    go.GetComponent<SpriteRenderer>().material = new Material(Shader.Find("Sprites/Default"));
    go.AddComponent<ArmorCtrl>();
+
+AssetBundling Scenes
+^^^^^^^^^^^^^^^^^^^^
+This video guides your through how to create and assetbundle a scene.
+
+.. raw:: html
+
+    <iframe width="426" height="240" src="https://www.youtube.com/embed/8Q1SsoUdTQc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+.. note::
+   You do not actually need the AssetBundle Browser; there is a way to assetbundle without a GUI. The video does not cover it since this is much more user-friendly.
+
+.. note::
+   When making the hole for my scene in blender, I use vertex selection but it's much better to select and delete faces instead.
+
+.. note::
+   SFGrenade has made a Unity extension that rounds the points of the boxcollider for you.
+   `You can find it here. <https://github.com/SFGrenade/ModdingHelper/blob/master/RoundEdgeCollider2Ds.cs>`_
+
+.. note::
+   I make a mistake at 21:45 because I leave a gap in the gateway, allowing the player to potentially dash through the top and go outside of bounds.

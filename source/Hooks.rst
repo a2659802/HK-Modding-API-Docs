@@ -502,7 +502,11 @@ OnRecieveDeathEventHook
 ^^^^^^^^^^^^^^^^^^^^^^^
 :code:`ModHooks.Instance.OnRecieveDeathEventHook += EnemyDied`
 
-:code:`public void EnemyDied( EnemyDeathEffects enemyDeathEffects, bool eventAlreadyRecieved, ref float? attackDirection, ref bool resetDeathEvent, ref bool spellBurn, ref bool isWatery )`
+.. code-block:: c#
+
+    public void EnemyDied( EnemyDeathEffects enemyDeathEffects, bool eventAlreadyRecieved,
+                           ref float? attackDirection, ref bool resetDeathEvent, 
+                           ref bool spellBurn, ref bool isWatery )
  
 Called whenever an enemy dies.
 
@@ -513,7 +517,11 @@ OnRecordKillForJournalHook
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 :code:`ModHooks.Instance.OnRecordKillForJournalHook += RecordJournalKill`
 
-:code:`public void RecordJournalKill( EnemyDeathEffects enemyDeathEffects, string playerDataName, string killedBoolPlayerDataLookupKey, string killCountIntPlayerDataLookupKey, string newDataBoolPlayerDataLookupKey )`
+.. code-block:: c#
+
+    public void RecordJournalKill( EnemyDeathEffects enemyDeathEffects, string playerDataName, 
+                                   string killedBoolPlayerDataLookupKey, string killCountIntPlayerDataLookupKey, 
+                                   string newDataBoolPlayerDataLookupKey )
  
 Called whenever an enemy dies, and it's recorded to the journal. The strings are lookup values you can use with PlayerData.GetBool()/PlayerData.GetInt() to obtain relevant data from the save data.
 
