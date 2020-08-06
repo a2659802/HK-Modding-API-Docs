@@ -28,3 +28,4 @@ This is the documentation on Hollow Knights modding API.
    Reflection
    CanvasUtil
    ModCommon
+   SFCore

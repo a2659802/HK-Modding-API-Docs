@@ -119,5 +119,5 @@ Using CharmHelper_, it is easy to add completely new charms to the game. For hel
 
 
 
-.. _CharmHelper: https://github.com/SFGrenade/ModdingHelper/blob/master/CharmHelper.cs
-.. _CharmHelper_Example: https://github.com/SFGrenade/ModdingHelper/blob/master/CharmHelper_Example.cs
+.. _CharmHelper: https://radiance.host/apidocs/SFCore.html
+.. _CharmHelper_Example: https://radiance.host/apidocs/SFCore.html
