@@ -22,6 +22,7 @@ This is the documentation on Hollow Knights modding API.
    Classes
    PlayMakerFSM
    Assets
+   EditScene
    Layers-And-Tags
    IL
    Reflection
