@@ -21,6 +21,7 @@ This is the documentation on Hollow Knights modding API.
    DnSpy
    Classes
    PlayMakerFSM
+   SFCore
    Assets
    EditScene
    Layers-And-Tags
@@ -28,4 +29,3 @@ This is the documentation on Hollow Knights modding API.
    Reflection
    CanvasUtil
    ModCommon
-   SFCore

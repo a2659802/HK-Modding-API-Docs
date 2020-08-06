@@ -1,16 +1,17 @@
-Adding custom achievements, charms and items
-============================================
+Custom Achievements/Charms/Items
+=====================================
 
 Background
 ^^^^^^^^^^
 You can add custom achievements, charms and items without having a good understanding of the various aspects that run Hollow Knight and its mods. 
 Therefore, this guide recommends and expects that you have already worked with the following topics:
+
 * Understanding the structure of a basic mod.
 * Adding embedded resources to a mod.
 
 .. note::
     These steps are made using Visual Studio as an IDE, if you're using Rider, the details might not match up.
-    If you are unsure about details, ask in the discord.
+    If you are unsure about details, ask in the Discord.
 
 Load embedded images
 ^^^^^^^^^^^^^^^^^^^^
@@ -80,6 +81,7 @@ Add custom charms
     {
         //private Sprite testSprite;
         public CharmHelper charmHelper { get; private set; }
+    }
 
 5) Initialize the CharmHelper with 4 custom charms and empty sprites, also initialize the callbacks needed. (Lines 54 - 66)
 
@@ -267,7 +269,7 @@ Add custom achievements
 Add custom inventory items
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. warn::
+.. warning::
     Don't use this yet, it only supports normal items (like Lumafly Lantern and similar), not counted items (like Rancid Eggs).
 
 1) After adding the reference, you can follow the CharmHelper_Example_ code, but you can leave out a lot, as most things are handled by the helper.
@@ -280,6 +282,7 @@ Add custom inventory items
     {
         //private Sprite testSprite;
         public ItemHelper itemHelper { get; private set; }
+    }
 
 5) Initialize the AchievementHelper with 1 custom achievement and empty sprites.
 

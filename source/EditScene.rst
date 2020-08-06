@@ -1,5 +1,5 @@
-Modifying Scenes through Utiny Ripper and Assetbundling
-=======================================================
+Modifying Scenes with Utiny Ripper
+==================================
 
 Introduction
 ^^^^^^^^^^^^
@@ -18,6 +18,7 @@ Background
 ^^^^^^^^^^
 You cannot edit scenes without having a good understanding of the various aspects that run Hollow Knight and its mods. 
 Therefore, this guide recommends and expects that you have already worked with the following topics:
+
 * Understanding the structure of a basic mod.
 * Having basic Unity knowledge.
 * Knowing how to create new scenes.
@@ -441,3 +442,4 @@ Currently, if we go from the scene before **Abyss_09** (**Abyss_16**) to **Abyss
 And that's everything, hopefully this guide has taught you how to edit Hollow Knight scenes and has given you an idea of what you need to do to fix common issues that might popup with your scene.
 
 `Find the entire program along with the assetbundle and Unity scene here <https://github.com/SalehAce1/HKEdit-Tutorial>`_
+ 
