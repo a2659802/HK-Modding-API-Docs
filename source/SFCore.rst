@@ -232,16 +232,7 @@ Add custom achievements
 
 1) After adding the reference, you can follow the CharmHelper_Example_ code, but you can leave out a lot, as most things are handled by the helper.
 
-2) Similar to step 4 of Add_custom_charms_, you add the AchievementHelper as a member of your main mod class.
-
-.. code-block:: c#
-
-    public class AchievementModClass : Mod
-    {
-        //private Sprite testSprite;
-        public AchievementHelper achHelper { get; private set; }
-
-5) Initialize the AchievementHelper with 1 custom achievement and empty sprites.
+2) Initialize the AchievementHelper with 1 custom achievement and empty sprites.
 
 .. note::
     This step is the one where you can add your custom sprites. Simply load those instead of the :code:`new Sprite()`.
@@ -254,37 +245,18 @@ Add custom achievements
     public override void Initialize()
     {
         //loadResources();
-        achHelper = new AchievementHelper();
-        achHelper.customAchievements.Add(new s_CustomAchievement() {
-            key = "YourCustomAchievementKey",
-            sprite = new Sprite(),
-            titleConvo = "YourCustomLanguageConvo",
-            textConvo = "YourCustomLanguageConvo",
-            hidden = false
-        });
+
+        AchievementHelper.Add("YourCustomAchievementKey", new Sprite(), "YourCustomLanguageConvo", "YourCustomLanguageConvo", false);
     }
 
-6) Done! Now you can at some point in your mod have :code:`GameManager.instance.AwardAchievement("YourCustomAchievementKey");` to grant the player the achievement.
+3) Done! Now you can at some point in your mod have :code:`GameManager.instance.AwardAchievement("YourCustomAchievementKey");` to grant the player the achievement.
 
 Add custom inventory items
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. warning::
-    Don't use this yet, it only supports normal items (like Lumafly Lantern and similar), not counted items (like Rancid Eggs).
-
 1) After adding the reference, you can follow the CharmHelper_Example_ code, but you can leave out a lot, as most things are handled by the helper.
 
-2) Similar to step 4 of Add_custom_charms_, you add the ItemHelper as a member of your main mod class.
-
-.. code-block:: c#
-
-    public class ItemModClass : Mod
-    {
-        //private Sprite testSprite;
-        public ItemHelper itemHelper { get; private set; }
-    }
-
-5) Initialize the AchievementHelper with 1 custom achievement and empty sprites.
+2) Initialize the ItemHelper with custom items and empty sprites.
 
 .. note::
     This step is the one where you can add your custom sprites. Simply load those instead of the :code:`new Sprite()`.
@@ -295,23 +267,30 @@ Add custom inventory items
 .. note::
     For the :code:`playerdataBool` to work properly, you need the :code:`ModHooks.Instance.GetPlayerBoolHook` & :code:`ModHooks.Instance.SetPlayerBoolHook` similar to the CharmHelper, but only listening to the custom bool key.
 
+.. note::
+    For the :code:`playerdataInt` to work properly, you need the :code:`ModHooks.Instance.GetPlayerIntHook` & :code:`ModHooks.Instance.SetPlayerIntHook` similar to the CharmHelper, but only listening to the custom int key.
+
 .. code-block:: c#
 
     public override void Initialize()
     {
         //loadResources();
-        itemHelper = new ItemHelper(new s_CustomNormalItem[] {
-            new s_CustomNormalItem() {
-                uniqueName = "YourUniqueStateName", // Just choose a random string tbh
-                sprite = new Sprite(),
-                playerdataBool = "YourCustomPlayerDataBool",
-                nameConvo = "YourCustomLanguageConvo",
-                descConvo = "YourCustomLanguageConvo"
-            }
-        });
+
+        // Normal Items, like the Kings Brand, Crystal Heart, etc.
+        ItemHelper.AddNormalItem("YourUniqueStateName", new Sprite(), "YourCustomPlayerDataBool", "YourCustomLanguageConvo", "YourCustomLanguageConvo");
+
+        // Counted Items, like Simple Keys, Rancid Eggs, etc.
+        ItemHelper.AddCountedItem("YourUniqueStateName", new Sprite(), "YourCustomPlayerDataInt", "YourCustomLanguageConvo", "YourCustomLanguageConvo");
+
+        // 1 2 Both Items, like the Map, Quill and Map and Quill
+        SFCore.ItemHelper.AddOneTwoBothItem("YourUniqueStateName",
+            new Sprite(), new Sprite(), new Sprite(), // Sprites
+            "YourCustomPlayerDataBool", "YourCustomPlayerDataBool", // PlayerData Bools
+            "YourCustomLanguageConvo", "YourCustomLanguageConvo", "YourCustomLanguageConvo", // Name Convos
+            "YourCustomLanguageConvo", "YourCustomLanguageConvo", "YourCustomLanguageConvo"); // Description Convos
     }
 
-6) Done! You can now have custom Inventory Items.
+3) Done! You can now have custom Inventory Items.
 
 
 .. _CharmHelper_Example: https://github.com/SFGrenade/ModdingHelper/blob/master/CharmHelper_Example.cs
