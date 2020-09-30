@@ -2,47 +2,47 @@ Reflection
 ==============
 
 Reflection is a powerful way to detect an entity's infomation. With reflection, 
-you can retrieve a lot(such as methods or fields in a class) and filter them with BindingFlags.
-**But if you just want to access a specific private field**
-**to use some Reflection Helper can be the best way.**
-to see_more_,you can inquire microsoft's toturial
+you can retrieve a lot (such as methods or fields in a class) and filter them with BindingFlags.
+**But if you just want to access a specific private field using a Reflection Helper is the better way.**
+`To see more, you can read through Microsoft's tutorial. <https://docs.microsoft.com/en-us/dotnet/api/system.reflection?view=netframework-3.5>`_
 
 
-# Reflection Helper
-^^^^^^^^^^^^^^^^^^^
-Modding APi has it own reflection helper, but 56 made another reflection in Vasi which name Mirror
+Reflection Helper
+^^^^^^^^^^^^^^^^^
+The Modding API has it own reflection helper, but 56 made another reflection in Vasi which he named Mirror.
 Mirror will be easier to use and more powerful, but I'll still introduce API's reflection helper,
 you can skip this part if you like
 
-Assume there defined two class: one is static class, other is normal class
+Assume there are two class: one is a static class, other is a normal class
 
-.. code-block:: c#
+.. code-block:: C#
 
-		public static class StaticClass
-		{
-			private static string _static_field = "a static field in a static class";
-		}
-		public class InstanceClass
-		{
-			private static string _static_field = "a static field in an instance class";
-			private int _non_static_field = 59;
-		}
+	public static class StaticClass
+	{
+		private static string _static_field = "a static field in a static class";
+	}
+	public class InstanceClass
+	{
+		private static string _static_field = "a static field in an instance class";
+		private int _non_static_field = 59;
+	}
 
 I'll show you how to access the private field for the above classes with api and vasi,
 you can try them for accessing classes in Assembly-CSharp
 
-# API Reflection Helper
------------------------
+API Reflection Helper
+~~~~~~~~~~~~~~~~~~~~~
 
-## GET
->>>>>>
+GET
+***
 
 get :code:`StaticClass._static_field`
 
-.. code-block:: c#
+.. code-block:: C#
 
 	FieldInfo fi = ReflectionHelper.GetField(typeof(StaticClass), "_static_field", false);
 	Log($"StaticClass._static_field is {fi.GetValue(null)}");
+	
 
 get :code:`InstanceClass._static_field`
 
@@ -50,25 +50,25 @@ get :code:`InstanceClass._static_field`
 	
 	fi = ReflectionHelper.GetField(typeof(InstanceClass), "_static_field",false);
 	Log($"(First way)InstanceClass._static_field is {fi.GetValue(null)}");
-.. note::
-	To Get or Set an instance field,you must have the instance of this type
-	So you should get it whatever way.
 	
-	in this example, I use :code:`InstanceClass instance = new InstanceClass();` to create an instance for test
+.. note::
+	To Get or Set an instance field, you must have the instance of this type.
+	In this example, I use :code:`InstanceClass instance = new InstanceClass();` to create an instance for test
 
 get :code:`InstanceClass._non_static_field`
 
 .. code-block:: c#
 
-		//first way
+	// first way
 	fi = ReflectionHelper.GetField(typeof(InstanceClass), "_non_static_field");
 	Log($"(First way)InstanceClass._non_static_field is {fi.GetValue(instance)}");
-		//second way
+
+	// second way
 	int nonstatic = ReflectionHelper.GetAttr<InstanceClass, int>(instance,"_non_static_field");
 	Log($"(second way)InstanceClass._non_static_field is {nonstatic}");
 	
-## SET
->>>>>>
+SET
+***
 
 set :code:`StaticClass._static_field`
 
@@ -90,24 +90,25 @@ set :code:`InstanceClass._non_static_field`
 
 .. code-block:: c#
 
-	//first way
+	// first way
 	fi = ReflectionHelper.GetField(typeof(InstanceClass), "_non_static_field");
 	fi.SetValue(instance, 1);
 	Log($"(First way)InstanceClass._non_static_field is {fi.GetValue(instance)}");
-	//second way
+
+	// second way
 	ReflectionHelper.SetAttr<InstanceClass, int>(instance, "_non_static_field", 2);
 	int nonstatic = ReflectionHelper.GetAttr<InstanceClass, int>(instance,"_non_static_field");
 	Log($"(second way)InstanceClass._non_static_field is {nonstatic}");
 
 
-# Vasi Reflection Helper
-------------------------
+Vasi Reflection Helper
+~~~~~~~~~~~~~~~~~~~~~~
 
-## GET
->>>>>>
+GET
+***
 
 get :code:`StaticClass._static_field`
-	It seems Not Support lol
+	It seems to not be supported. 
 	
 get :code:`InstanceClass._static_field`
 
@@ -123,22 +124,22 @@ get :code:`InstanceClass._non_static_field`
 	int f2 = Mirror.GetField<InstanceClass, int>(instance,"_non_static_field");
 	Log($"InstanceClass._non_static_field is {f2}");
 
-## SET
->>>>>>
+SET
+***
 
 set :code:`StaticClass._static_field`
-	It seems Not Support lol
+	It seems to not be supported.
 
 set :code:`InstanceClass._static_field`
 
 .. code-block:: c#
 
-	//first way : use SetField
+	// first way : use SetField
 	Mirror.SetField<InstanceClass, string>("_static_field", "modify static in instance");
 	string f1 = Mirror.GetField<InstanceClass, string>("_static_field");
 	Log($"InstanceClass._static_field is {f1}");
 
-	//second way : use ref
+	// second way : use ref
 	ref string rf1 = ref Mirror.GetFieldRef<InstanceClass, string>("_static_field");
 	rf1 = "(way2) modify static in instance";
 	f1 = Mirror.GetField<InstanceClass, string>("_static_field");
@@ -148,23 +149,23 @@ set :code:`InstanceClass._non_static_field`
 
 .. code-block:: c#
 
-	//first way : use SetField
+	// first way : use SetField
 	Mirror.SetField<InstanceClass, int>(instance, "_non_static_field", 1);
 	int f2 = Mirror.GetField<InstanceClass, int>(instance, "_non_static_field");
 	Log($"InstanceClass._non_static_field is {f2}");
 
-	//second way : use ref
+	// second way : use ref
 	ref int rf2 = ref Mirror.GetFieldRef<InstanceClass, int>(instance, "_non_static_field");
 	rf2 = 2;
 	f2 = Mirror.GetField<InstanceClass, int>(instance, "_non_static_field");
 	Log($"InstanceClass._non_static_field is {f2}");
 
-# Some usage for Reflection
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Some usage for Reflection
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
-# Use Reflection to call private methods
-----------------------------------------
-assume there are two class like following:
+Use Reflection to call private methods
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Assume there are two classes like the following:
 
 .. code-block:: c#
 
@@ -191,11 +192,11 @@ assume there are two class like following:
         }
     }
 
-you may use typeof(T).GetMethod(methodName,BindingFlags) to get a method 
-now I suppose you want to call ``StaticClass._static_method()``
+You may use typeof(T).GetMethod(methodName,BindingFlags) to get a method. 
+Now suppose you want to call ``StaticClass._static_method()``
 so you can use ``var method = typeof(StaticClass).GetMethod("_static_method", BindingFlags.NonPublic | BindingFlags.Static)`` to get this method, and then use ``m.Invoke(null, new object[] { });`` to call it.
 
-I will give four examples for difference method calling following:
+I will give four examples for different method calling:
 
 .. code-block:: c#
 
@@ -228,12 +229,12 @@ I will give four examples for difference method calling following:
 	
 
 	
-# Use Reflection to create a series of classes
-----------------------------------------------
+Use Reflection to create a series of classes
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Sometimes we want to create an instance of a class, the code ``new XXX()`` would come into our mind
-but if we need to create a lot of instance with difference class, Reflection will be more convenience.
+but if we need to create a lot of instances with different classes, reflection will be more convenient.
 
-assume there an abstract shape defined like this:
+Assume there is an abstract shape defined like this:
 
 .. code-block:: c#
 
@@ -243,12 +244,12 @@ assume there an abstract shape defined like this:
         public abstract void Draw();
         public AbstractShape()
         {
-            Modding.Logger.Log("An Concrete class has been instantiate");
+            Modding.Logger.Log("An Concrete class has been instantiated");
             Draw();
         }
     }
 
-and we still have its subclasses in a class like these:
+And we still have its subclasses in a class like these:
 
 .. code-block:: c#
 
@@ -274,7 +275,7 @@ and we still have its subclasses in a class like these:
         }
     }
 
-now we can create all the classes's instance in the Shapes using following code:
+Now we can create all the classes's instance in the Shapes using the following code:
 
 .. code-block:: c#
 
@@ -288,9 +289,8 @@ now we can create all the classes's instance in the Shapes using following code:
 
 Source Code 
 ^^^^^^^^^^^
-	you can get ArticleExam_ in my github
-	and also get an real mod(P5RandomMod_) in 56's github,it use reflection to modify a private array.
+	You can get ArticleExam_ in my github
+	and also get a real mod (P5RandomMod_) in 56's github, it uses reflection to modify a private array.
 
 .. _ArticleExam: https://github.com/a2659802/MyModdingToturial/tree/master/ReflectionExam
 .. _P5RandomMod: https://github.com/fifty-six/HollowKnight.RandomizedPantheons/blob/master/RandomPantheons/RandomPantheons.cs
-.. _see_more: https://docs.microsoft.com/en-us/dotnet/api/system.reflection?view=netframework-3.5
