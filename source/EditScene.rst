@@ -7,12 +7,17 @@ Modifying prexisting scenes in Hollow Knight can involve a variety of things, fr
 The process behind editing levels is equally diverse with the simplest methodology requiring you to create and position everything manually with code. 
 While this approach requires less setup, a more elegant approach exists. This guide will teach you to use a software called **Utiny Ripper** to export
 scenes from Hollow Knight into the game engine Unity, edit your level there, and import your new level back into Hollow Knight.
-By the end of this tutorial, you should be able to accomplish all of these tasks with limited extra help needed. 
-We will be editing the **Abyss_09** scene.
+By the end of this tutorial, you should be able to accomplish all of these tasks with limited extra help needed.
+With all of that said, this tutorial will be geared towards those who have previously modded Hollow Knight and furthermore, it will assume
+you know how to assetbundle new scenes into Hollow Knight.
+We will be editing the **Abyss_09** scene as an example.
 
 .. note::
     While adding new scenes is relatively simple, editing old ones can be both tedious and difficult depending on the scene you choose and how much you wish to change.
     My hope is that this guide will eventually become mostly obsolete once Nes finishes his HK-World-Edit mod. 
+
+.. note::
+    This mod will be geared towards Windows users since as far as I know Utiny Ripper does not work with any other operating system.
 
 Background
 ^^^^^^^^^^
@@ -38,6 +43,10 @@ What you will need
 * `Utiny Ripper <https://sourceforge.net/projects/utinyripper/files/>`_
 * `Unity version 2017.4.10f <https://unity3d.com/get-unity/download/archive>`_
 * `Assetbundle Browser <https://github.com/Unity-Technologies/AssetBundles-Browser/releases>`_
+* Modding API
+* C# IDE (Visual Studio or JetBrain Rider)
+
+And now, here are the steps to edit Hollow Knight scenes. 
 
 Export with Utiny Ripper
 ^^^^^^^^^^^^^^^^^^^^^^^^
